@@ -1,0 +1,5 @@
+# https://help.github.com/articles/dealing-with-line-endings/
+# Explicitly declare text files you want to always be normalized and converted
+# to lf line endings on checkout.
+*.py text eol=lf
+*.sh text eol=lf
