@@ -58,6 +58,22 @@ To restrict the versions of Python tested by `tox`, you can use `tox -e py27,py3
 
 Although tested only with [Postfix](http://www.postfix.org/), Zeyple should integrate nicely with any MTA which provides a [filter](http://www.postfix.org/FILTER_README.html "Postfix After-Queue Content Filter")/hook mechanism. Please let me know if you experiment with this.
 
+## Vagrant
+
+A fully-setup test-environment is available to easily test your modifications.
+[Vagrant](https://www.vagrantup.com/) and a compatible virtualization environment ([VirtualBox](https://www.virtualbox.org/) for example) are required.
+
+To get started, open a shell in the base directory of this repositoy and type `vagrant up`.It will setup a linux box with everything preconfigured
+(Thunderbird included) so you can start with sending emails right away after the installation has completed. However, it needs to download a lot
+of things and the installation takes quite some time too so let it run for a bit.
+
+If everything has finished, the only thing you need to do is edit the zeyple.py on your real system. Every change is automatically reflected in
+theguest OS and used by postfix. If you need the output of the zeyple.log you can type `vagrant ssh` in the same shell you used to start the OS
+and then `tail -f /var/log/zeyple.log` as you would on your real machine.
+
+When you are done with testing you can type `vagrant halt` to shut everything down. If you want to delete the test environment you can use
+`vagrant destroy` to delete the box.
+
 ## Kudos
 
 Many thanks to [Harry Knitter](http://www.linux-magazine.com/Issues/2013/153/Email-Encryption-with-Zeyple) for his feedback to help make Zeyple bullet-proof.
