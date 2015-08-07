@@ -1,4 +1,4 @@
-﻿#/bin/sh
+#!/bin/sh
 
 apt-get install gnupg python-gpgme sudo
 
@@ -7,7 +7,7 @@ echo "Configuring zeyple"
 if getent passwd zeyple > /dev/null; then
 	echo 'User "zeyple" already exists'
 else
-	echo 'Creating User "testuser"'
+	echo 'Creating User "zeyple"'
 	adduser --system --no-create-home --disabled-login zeyple
 	echo 'User created'
 fi
