@@ -74,6 +74,10 @@ and then `tail -f /var/log/zeyple.log` as you would on your real machine.
 When you are done with testing you can type `vagrant halt` to shut everything down. If you want to delete the test environment you can use
 `vagrant destroy` to delete the box.
 
+If you get an error that sounds like
+```Command died with status 127: "/usr/local/bin/zeyple.py". Command output: /usr/bin/env: python_: No such file or directory```
+you need to make sure that the line-endings in the zeyple.py are LF and not CRLF.
+
 ## Kudos
 
 Many thanks to [Harry Knitter](http://www.linux-magazine.com/Issues/2013/153/Email-Encryption-with-Zeyple) for his feedback to help make Zeyple bullet-proof.
