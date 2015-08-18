@@ -123,6 +123,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   #config.vm.provision "shell", path: "vagrant/provision.sh"
   config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path = ".vagrant/provision/cookbooks"
 	chef.add_recipe "dovecot"
 	chef.add_recipe "postfix"
   end
